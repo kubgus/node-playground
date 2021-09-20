@@ -3,7 +3,7 @@
 
 //------- SEARCHED WORD: -------//
 
-let searchString = ""
+let searchString = "ab"
 
 //------------------------------//
 
@@ -19,7 +19,7 @@ let searchString = ""
 //------- UNIMPORTANT CODE: -------//
 
 
-//Random word function
+//Random letter function
 function makeid(length) {
     var result = '';
     var characters = 'abcdefghijklmnopqrstuvwxyz';
@@ -64,4 +64,18 @@ setTimeout(() => {
 
 }, 1000 * 5);
 
-//---------------------------------//
+
+
+
+
+//===============================//
+//                               //
+//     __          ________      //
+//    / /   ______/  _/ __ \     //
+//   / /   / __  // // / / /     //
+//  / /___/ /_/ // // /_/ /      //
+// /_____/\_____\___/\___\_\     //
+//                               //
+//                               //
+// (https://github.com/Kubicko)  //
+//===============================//
