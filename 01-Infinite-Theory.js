@@ -77,5 +77,5 @@ setTimeout(() => {
 // /_____/\_____\___/\___\_\     //
 //                               //
 //                               //
-// (https://github.com/Kubicko)  //
+// (https://github.com/kubgus)   //
 //===============================//

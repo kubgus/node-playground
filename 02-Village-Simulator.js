@@ -26,15 +26,15 @@ let village = {
 
 // ---------------- WORLD PROPERTIES: ---------------- //
 
-const days = 365;
+const days = 20;
 
 const diePerDay = 1;
 
 const foodPerPerson = 2;
 const waterPerPerson = 3;
 
-const foodMade = 20;
-const waterMade = 30;
+const foodMade = 3;
+const waterMade = 4;
 
 // --------------------------------------------------- //
 // -------------------------------------------------- //
@@ -161,5 +161,5 @@ times(days)(() => day());
 // /_____/\_____\___/\___\_\     //
 //                               //
 //                               //
-// (https://github.com/Kubicko)  //
+// (https://github.com/kubgus)   //
 //===============================//
