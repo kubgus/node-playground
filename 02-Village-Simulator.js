@@ -16,9 +16,9 @@
 
 let village = {
 
-    people: 3,
-    food: 6,
-    water: 9,
+    people: 5,
+    food: 10,
+    water: 15,
 
 };
 // --------------------------------------------------- //
@@ -26,13 +26,15 @@ let village = {
 
 // ---------------- WORLD PROPERTIES: ---------------- //
 
-const days = 5
+const days = 365;
+
+const diePerDay = 1;
 
 const foodPerPerson = 2;
 const waterPerPerson = 3;
 
-const foodMade = 3;
-const waterMade = 4;
+const foodMade = 20;
+const waterMade = 30;
 
 // --------------------------------------------------- //
 // -------------------------------------------------- //
@@ -48,7 +50,7 @@ const waterMade = 4;
 
 
 // Each day:  (in this order)
-// 1. One person dies
+// 1. {diePerDay} person dies
 // 2. One person is born for every two people in the village
 // 3. Each person consumes {foodPerPerson} food and {waterPerPerson} water (people that don't get enough resources die)
 // 4. Each person creates {foodMade} food and {waterMade} water
@@ -71,19 +73,6 @@ const waterMade = 4;
 
 
 
-// First log:
-logData()
-
-
-
-// Lovely code by Mulan on StackOverflow: (https://stackoverflow.com/users/633183/mulan) <3
-const times = x => f => {
-    if (x > 0) {
-        f()
-        times(x - 1)(f)
-    }
-}
-
 
 function logData() {
 
@@ -98,14 +87,26 @@ function logData() {
 }
 
 
+// First log:
+logData()
+
+
+// Lovely code by Mulan on StackOverflow: (https://stackoverflow.com/users/633183/mulan) <3
+const times = x => f => {
+    if (x > 0) {
+        f()
+        times(x - 1)(f)
+    }
+}
+
 
 // Main "Per Day" Function
 function day() {
 
     // Rule 1:
-    if (village.people > 0) {
+    if (village.people >= diePerDay) {
 
-        village.people -= 1;
+        village.people -= diePerDay;
 
     }
 
@@ -118,15 +119,19 @@ function day() {
 
     if (village.food < 0) {
 
-        village.people += Math.floor(village.food / foodPerPerson);
-        village.food -= Math.floor(village.food / foodPerPerson) * foodPerPerson;
+        let hungerDeaths = Math.floor((0 - village.food) / foodPerPerson);
+
+        village.people -= hungerDeaths;
+        village.food += hungerDeaths * foodPerPerson;
 
     };
 
     if (village.water < 0) {
 
-        village.people += Math.floor(village.water / waterPerPerson);
-        village.water -= Math.floor(village.water / waterPerPerson) * waterPerPerson;
+        let thirstDeaths = Math.floor((0 - village.water) / waterPerPerson);
+
+        village.people -= thirstDeaths;
+        village.water += thirstDeaths * waterPerPerson;
 
     };
 
