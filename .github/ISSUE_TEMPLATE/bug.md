@@ -1,10 +1,9 @@
 ---
 name: Bug
 about: Create a bug report, so I can improve the code and make it more accessible
-  to everyone.
 title: ''
-labels: ''
-assignees: ''
+labels: code error, missing modules
+assignees: kubgus
 
 ---
 
