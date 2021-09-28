@@ -1,6 +1,3 @@
-// [beta, still a bit buggy with bigger numbers, I'm planning to add more features] //
-
-
 //  _____             __ _       
 // / ____|           / _(_)      
 // | |     ___  _ __ | |_ _  __ _ 

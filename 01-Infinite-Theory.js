@@ -1,26 +1,35 @@
+//  _____             __ _       
+// / ____|           / _(_)      
+// | |     ___  _ __ | |_ _  __ _ 
+// | |    / _ \| '_ \|  _| |/ _` |
+// | |___| (_) | | | | | | | (_| |
+//  \_____\___/|_| |_|_| |_|\__, |
+//                           __/ |
+//                          |___/  
 
 
 
 //------- SEARCHED WORD: -------//
 
-let searchString = "ab"
+let searchString = "ab";
 
 //------------------------------//
 
 
 
 
+//   _____          _      
+//  / ____|        | |     
+//  | |    ___   __| | ___ 
+//  | |   / _ \ / _` |/ _ \
+//  | |__| (_) | (_| |  __/
+//  \_____\___/ \__,_|\___|
 
 
 
 
-
-
-//------- UNIMPORTANT CODE: -------//
-
-
-//Random letter function
-function makeid(length) {
+// Random letter function:
+function randomLetter(length) {
     var result = '';
     var characters = 'abcdefghijklmnopqrstuvwxyz';
     var charactersLength = characters.length;
@@ -32,37 +41,35 @@ function makeid(length) {
 }
 
 
-//Set variables
-let miliseconds = 0
-
+// Set variables:
 let char = ""
-
 let wordArray = []
 
-console.log(`Chance: 1/${Math.pow(26, searchString.length)}`)
-
-
-//Main code
+// Main code:
 setTimeout(() => {
 
+    // Repeats indefinitely:
     let interval = setInterval(function () {
 
-        char = makeid(1)
+        char = randomLetter(1);
 
-        miliseconds += 10
+        wordArray.push(char);
 
-        wordArray.push(char)
+        console.log("\x1b[0m", char);
 
-        console.log(char)
-
+        // Check for searched word:
         if (wordArray.join("").includes(searchString)) {
-            console.log(`"${searchString}" was found!(${miliseconds / 1000}s)`)
-            clearInterval(interval)
+            // Return found word:
+            console.log("\x1b[32m", `"${searchString}" was found!`);
+            // Reset console color:
+            console.log("\x1b[0m", "");
+            // Stop node:
+            clearInterval(interval);
         }
 
-    }, 10)
+    }, 10);
 
-}, 1000 * 5);
+}, 1000 * 1);
 
 
 
