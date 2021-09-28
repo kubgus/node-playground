@@ -1,3 +1,6 @@
+// REQUIRED MODULE:
+// $ npm install google-search-results-nodejs
+
 //  _____             __ _       
 // / ____|           / _(_)      
 // | |     ___  _ __ | |_ _  __ _ 
@@ -25,6 +28,8 @@ const resultCount = 3;
 // |_____/ \___||___/\___|_|  |_| .__/ \__|_|\___/|_| |_|
 //                              | |                      
 //                              |_|                      
+//
+// THIS PROJECT USES THE SERP API AND GOOGLE SEARCH RESULTS (https://www.npmjs.com/package/google-search-results-nodejs)
 //
 // This Node.js file allows you to search Google for specific keywords without
 // being disturbed by ads, stories, images - basically everything.
