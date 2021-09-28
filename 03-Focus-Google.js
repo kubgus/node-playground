@@ -85,6 +85,27 @@ function googleSearch() {
     // Input function:
     readline.question(`Search: `, searchString => {
 
+        // Check if {searchString} is empty:
+        if (searchString.length == 0) {
+
+            // Blank line:
+            console.log("\x1b[0m", "");
+
+            // Error:
+            console.log("\x1b[31m", `Search cannot be empty.`);
+
+            // Blank line / reset colors:
+            console.log("\x1b[0m", "");
+
+
+            // Search again:
+            googleSearch();
+
+            // Cancel previous search:
+            return;
+
+        };
+
         // Search via API function:
         search.json({
 
@@ -135,7 +156,7 @@ function googleSearch() {
             // How to exit:
             console.log("\x1b[31m", `Press [CTRL + C] to exit`);
 
-            // Blank line / reset colors
+            // Blank line / reset colors:
             console.log("\x1b[0m", "");
 
             // Trigger the Search function again:
