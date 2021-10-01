@@ -41,6 +41,8 @@ function randomLetter(length) {
     return result;
 }
 
+// Make the exit() function possible:
+const { exit } = require('process');
 
 // A Node.js function for input:
 const readline = require('readline').createInterface({
@@ -68,14 +70,14 @@ readline.question(`Stop on Word: `, searchString => {
 
         // Check for searched word:
         if (wordArray.join("").includes(searchString)) {
+            // Blank line:
+            console.log("\x1b[0m", "");
             // Return found word:
             console.log("\x1b[32m", `"${searchString}" was found!`);
-            // How to exit:
-            console.log("\x1b[31m", `Press [CTRL + C] to exit`);
             // Reset console color:
             console.log("\x1b[0m", "");
-            // Stop:
-            clearInterval(interval);
+            // Exit:
+            exit();
         }
 
     }, 10);
