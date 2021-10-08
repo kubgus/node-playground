@@ -71,17 +71,4 @@ export async function cli(args) {
     // Make the user select missing options:
     options = await promptForMissingOptions(options);
 
-    module.exports = (commandOptions) => {
-
-        let {
-            fileNumber,
-            callback
-        } = commandOptions
-
-        callback(commandOptions);
-
-        return;
-
-    };
-
 }
