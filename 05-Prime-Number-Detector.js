@@ -23,10 +23,6 @@
 
 
 
-// Make the exit() function possible:
-const { exit } = require('process');
-
-
 // A Node.js function for input:
 const readline = require('readline').createInterface({
     input: process.stdin,

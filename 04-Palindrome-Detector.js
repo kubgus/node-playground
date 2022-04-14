@@ -22,8 +22,6 @@
 
 
 
-// Make the exit() function possible:
-const { exit } = require('process');
 
 // A Node.js function for input:
 const readline = require('readline').createInterface({
@@ -44,7 +42,7 @@ function isPalindrome() {
             letterList.push(searchString.charAt(searchString.length - i).toLowerCase());
         };
 
-        // Empty line:
+        // Blank line:
         console.log("\x1b[0m", "");
         // Always log this:
         console.log("\x1b[0m", `Your word`);
